@@ -7,7 +7,7 @@ License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
 Source0:	http://repo.steampowered.com/steam/pool/steam/s/steam/%{name}_%{version}.tar.gz
 Requires:	zenity
-Requires:	libmesagl1
+Requires:	libmesagl
 BuildArch:      noarch
 
 %description
