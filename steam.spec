@@ -1,6 +1,6 @@
 Summary:	Steam Linux Client
 Name:		steam
-Version:	1.0.0.43
+Version:	1.0.0.45
 Release:	1
 Group:		Games/Other
 License:	Proprietary
@@ -8,7 +8,7 @@ URL:		https://github.com/ValveSoftware/steam-for-linux
 Source0:	http://repo.steampowered.com/steam/pool/steam/s/steam/%{name}_%{version}.tar.gz
 Requires:	zenity
 Requires:	libgl1
-BuildArch:      noarch
+BuildArch:	noarch
 
 %description
 Launcher for the Valve's Steam software distribution service.
