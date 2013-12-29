@@ -1,7 +1,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.45
-Release:	2
+Release:	3
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
