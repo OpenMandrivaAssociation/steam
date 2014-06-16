@@ -1,6 +1,6 @@
 Summary:	Steam Linux Client
 Name:		steam
-Version:	1.0.0.45
+Version:	1.0.0.47
 Release:	4
 Group:		Games/Other
 License:	Proprietary
