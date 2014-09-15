@@ -30,7 +30,7 @@ Requires:	libgl1
 Requires:	libglu1
 Requires:	liblcms2_2
 Requires:	libpng0
-Requires:	libpng16
+Requires:	libpng16_16
 Requires:	libSDL1.2_0
 Requires:	libvorbis0
 ExclusiveArch:	%{ix86}
