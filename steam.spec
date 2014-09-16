@@ -15,7 +15,7 @@ Requires:	curl
 Requires:	dbus
 Requires:	desktop-file-utils
 Requires:	fonts-ttf-liberation
-Requires:	gdk-pixbuf
+Requires:	gdk-pixbuf2.0
 Requires:	gtk+2.0
 Requires:	hicolor-icon-theme
 Requires:	nss
