@@ -15,7 +15,7 @@ Requires:	curl
 Requires:	dbus
 Requires:	desktop-file-utils
 Requires:	fonts-ttf-liberation
-Requires:	gdk-pixbuf
+Requires:	gdk-pixbuf2.0
 Requires:	gtk+2.0
 Requires:	hicolor-icon-theme
 Requires:	nss
@@ -29,8 +29,7 @@ Requires:	libgcrypt11
 Requires:	libgl1
 Requires:	libglu1
 Requires:	liblcms2_2
-Requires:	libpng0
-Requires:	libpng16
+Requires:	libpng16_16
 Requires:	libSDL1.2_0
 Requires:	libvorbis0
 ExclusiveArch:	%{ix86}
