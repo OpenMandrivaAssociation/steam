@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.49
-Release:	2
+Release:	3
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -28,10 +28,14 @@ Requires:	libfreetype6
 Requires:	libgcrypt11
 Requires:	libgl1
 Requires:	libglu1
+Requires:	libgdk_pixbuf2.0_0
+Requires:	libgtk-x11_2.0_0
 Requires:	liblcms2_2
+Requires:	libpango1.0_0
 Requires:	libpng16_16
 Requires:	libSDL1.2_0
 Requires:	libvorbis0
+Requires:	libxtst6
 ExclusiveArch:	%{ix86}
 
 %description
