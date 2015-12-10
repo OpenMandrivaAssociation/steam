@@ -2,7 +2,7 @@
 
 Summary:	Steam Linux Client
 Name:		steam
-Version:	1.0.0.49
+Version:	1.0.0.51
 Release:	1
 Group:		Games/Other
 License:	Proprietary
@@ -22,16 +22,25 @@ Requires:	nss
 Requires:	openal
 Requires:	pulseaudio
 Requires:	xterm
+Requires:	xz
 Requires:	zenity
 # Libraries
+Requires:	libcurl4
+Requires:	libdbus-glib-1_2
 Requires:	libfreetype6
 Requires:	libgcrypt11
 Requires:	libgl1
 Requires:	libglu1
+Requires:	libgdk_pixbuf2.0_0
+Requires:	libgtk-x11_2.0_0
 Requires:	liblcms2_2
 Requires:	libpng16_16
 Requires:	libSDL1.2_0
+Requires:	libstdc++6
 Requires:	libvorbis0
+Requires:	libxtst6
+# Add some restricted package to Suggests
+Suggests:	libtxc-dxtn
 ExclusiveArch:	%{ix86}
 
 %description
@@ -45,6 +54,9 @@ echo "Nothing to do"
 
 %install
 %makeinstall_std
+# Rename steamdeps, it's not working on non-Debian based distros
+mv -f %{buildroot}%{_bindir}/steamdeps %{buildroot}%{_bindir}/steamdeps.save
+install -D -m644 lib/udev/rules.d/99-steam-controller-perms.rules %{buildroot}%{_udevrulesdir}/99-steam-controller-perms.rules
 
 %files
 %doc %{_docdir}/*
@@ -54,3 +66,4 @@ echo "Nothing to do"
 %{_datadir}/pixmaps/steam*.png
 %{_iconsdir}/hicolor/*/apps/steam.*
 %{_mandir}/man6/steam.6.*
+%{_udevrulesdir}/99-steam-controller-perms.rules
