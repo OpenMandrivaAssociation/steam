@@ -58,9 +58,8 @@ echo "Nothing to do"
 
 # Rename steamdeps, it's not working on non-Debian based distros
 mv -f %{buildroot}%{_bindir}/steamdeps %{buildroot}%{_bindir}/steamdeps.save
-
 install -D -m644 lib/udev/rules.d/99-steam-controller-perms.rules %{buildroot}%{_udevrulesdir}/99-steam-controller-perms.rules
-    
+
 %files
 %doc %{_docdir}/*
 %{_bindir}/steam*
