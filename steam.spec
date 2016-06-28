@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.52
-Release:	1
+Release:	2
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -40,6 +40,7 @@ Requires:	libSDL1.2_0
 Requires:	libstdc++6
 Requires:	libvorbis0
 Requires:	libxtst6
+Requires:	libdri-drivers
 # Add some restricted package to Suggests
 Suggests:	libtxc-dxtn
 ExclusiveArch:	%{ix86}
