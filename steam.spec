@@ -3,11 +3,12 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.52
-Release:	2
+Release:	3
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
 Source0:	http://repo.steampowered.com/steam/pool/steam/s/steam/%{name}_%{version}.tar.gz
+Patch0:		steam-use-our-own-libraries.patch
 Requires:	alsa-lib
 Requires:	awk
 Requires:	coreutils
@@ -50,6 +51,7 @@ Launcher for the Valve's Steam software distribution service.
 
 %prep
 %setup -q -n %{name}
+%apply_patches
 
 %build
 echo "Nothing to do"
