@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.52
-Release:	3
+Release:	4
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -29,6 +29,7 @@ Requires:	zenity
 Requires:	libcurl4
 Requires:	libdbus-glib-1_2
 Requires:	libfreetype6
+Requires:	libgconf2_4
 Requires:	libgcrypt20
 Requires:	libgl1
 Requires:	libglu1
