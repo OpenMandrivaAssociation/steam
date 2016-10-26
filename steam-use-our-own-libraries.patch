@@ -1,18 +1,20 @@
-diff -Naur steam/steam steam.tpg/steam
---- steam/steam	2016-03-29 20:03:30.000000000 +0000
-+++ steam.tpg/steam	2016-06-29 18:54:35.878185705 +0000
-@@ -186,6 +186,7 @@
- # go to the install directory and run the client
- cp "$LAUNCHSTEAMBOOTSTRAPFILE" "$LAUNCHSTEAMDIR/bootstrap.tar.xz"
- cd "$LAUNCHSTEAMDIR"
-+
- if [ "`command -v tee`" != "" ]; then
- 	mkdir -p --mode=777 /tmp/dumps
-     if [[ -f "/tmp/dumps/${USER}_stdout.txt" ]]; then
-@@ -195,3 +196,6 @@
+--- steam/steam.0000~	2016-10-07 00:59:01.000000000 +0200
++++ steam/steam	2016-10-26 20:22:49.052351378 +0200
+@@ -5,6 +5,10 @@
+ 
+ # Get the full name of this script
+ export STEAMSCRIPT="$(cd "${0%/*}" && echo "$PWD")/${0##*/}"
++export PATH="$HOME/.steam/bin32:$PATH"
++find "$HOME/.steam/root" "$HOME/.local/share/Steam" \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete 2>/dev/null
++mkdir -p "$HOME/.steam/bin32"
++ln -sf /usr/bin/gtar "$HOME/.steam/bin32/tar"
+ 
+ # When this version is incremented a new package will be deployed to:
+ #	http://repo.steampowered.com/steam
+@@ -195,3 +199,6 @@ if [ "`command -v tee`" != "" ]; then
  else
  	exec "$LAUNCHSTEAMDIR/$STEAMBOOTSTRAP" "$@"
  fi
 +
 +# (tpg) use our own libraries
-+find "$HOME/.steam/root" \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete
++find "$HOME/.steam/root" "$HOME/.local/share/Steam" \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete
