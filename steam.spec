@@ -28,6 +28,8 @@ Requires:	xz
 Requires:	zenity
 # Libraries
 Requires:	libcurl4
+# https://github.com/ValveSoftware/steam-for-linux/issues/4795
+Requires:	libdbusmenu-gtk2_4
 Requires:	libdbus-glib-1_2
 Requires:	libfreetype6
 Requires:	libgconf2_4
