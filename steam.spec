@@ -81,7 +81,7 @@ rm -rf TMP
 
 # Rename steamdeps, it's not working on non-Debian based distros
 mv -f %{buildroot}%{_bindir}/steamdeps %{buildroot}%{_bindir}/steamdeps.save
-install -D -m644 lib/udev/rules.d/99-steam-controller-perms.rules %{buildroot}%{_udevrulesdir}/99-steam-controller-perms.rules
+install -D -m644 lib/udev/rules.d/60-steam-input.rules %{buildroot}%{_udevrulesdir}/60-steam-input.rules
 
 %files
 %doc %{_docdir}/*
@@ -91,4 +91,4 @@ install -D -m644 lib/udev/rules.d/99-steam-controller-perms.rules %{buildroot}%{
 %{_datadir}/pixmaps/steam*.png
 %{_iconsdir}/hicolor/*/apps/steam.*
 %{_mandir}/man6/steam.6.*
-%{_udevrulesdir}/99-steam-controller-perms.rules
+%{_udevrulesdir}/60-steam-input.rules
