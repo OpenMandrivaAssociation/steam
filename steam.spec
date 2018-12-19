@@ -83,7 +83,7 @@ rm -rf	ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s* \
 	ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/lib*
 tar cf ../bootstraplinux_ubuntu12_32.tar *
 cd ..
-xz -9ef bootstraplinux_ubuntu12_32.tar
+xz -f bootstraplinux_ubuntu12_32.tar
 rm -rf TMP
 
 %install
