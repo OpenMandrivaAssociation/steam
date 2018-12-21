@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.59
-Release:	2
+Release:	3
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -22,8 +22,10 @@ Patch1:		%{name}-controller-gamepad-emulation.patch
 Requires:	alsa-lib
 Requires:	awk
 Requires:	coreutils
-# some games needs curl with GnuTLS enabled
 Requires:	curl >= 7.63.0
+# (tpg) see https://github.com/ValveSoftware/csgo-osx-linux/issues/1925
+# failed to dlopen engine_client.so error=/usr/lib64/libldap_r-2.4.so.2: version `OPENLDAP_2.4_2' not found
+Requires:	%{_lib}ldap2.4_2 >= 2.4.46-4
 Requires:	dbus
 Requires:	desktop-file-utils
 Requires:	fonts-ttf-liberation
