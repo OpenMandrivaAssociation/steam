@@ -2,27 +2,30 @@
 
 Summary:	Steam Linux Client
 Name:		steam
-Version:	1.0.0.56
-Release:	1
+Version:	1.0.0.59
+Release:	3
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
 Source0:	http://repo.steampowered.com/steam/pool/steam/s/steam/%{name}_%{version}.tar.gz
 
 # Input devices seen as joysticks:
-Source8:        https://raw.githubusercontent.com/denilsonsa/udev-joystick-blacklist/master/after_kernel_4_9/51-these-are-not-joysticks-rm.rules
+Source8:	https://raw.githubusercontent.com/denilsonsa/udev-joystick-blacklist/master/after_kernel_4_9/51-these-are-not-joysticks-rm.rules
 # First generation Nvidia Shield controller seen as mouse:
-Source9:        https://raw.githubusercontent.com/cyndis/shield-controller-config/master/99-shield-controller.rules
+Source9:	https://raw.githubusercontent.com/cyndis/shield-controller-config/master/99-shield-controller.rules
 
 Patch0:		steam-use-our-own-libraries.patch
 # Make Steam Controller usable as a GamePad:
 # https://steamcommunity.com/app/353370/discussions/0/490123197956024380/
-Patch1:         %{name}-controller-gamepad-emulation.patch
+Patch1:		%{name}-controller-gamepad-emulation.patch
 
 Requires:	alsa-lib
 Requires:	awk
 Requires:	coreutils
-Requires:	curl
+Requires:	curl >= 7.63.0
+# (tpg) see https://github.com/ValveSoftware/csgo-osx-linux/issues/1925
+# failed to dlopen engine_client.so error=/usr/lib64/libldap_r-2.4.so.2: version `OPENLDAP_2.4_2' not found
+Requires:	%{_lib}ldap2.4_2 >= 2.4.46-4
 Requires:	dbus
 Requires:	desktop-file-utils
 Requires:	fonts-ttf-liberation
@@ -37,7 +40,7 @@ Requires:	xterm
 Requires:	xz
 Requires:	zenity
 # Libraries
-Requires:	libcurl4
+Requires:	libcurl4 >= 7.63.0
 # https://github.com/ValveSoftware/steam-for-linux/issues/4795
 Requires:	libdbusmenu-gtk2_4
 Requires:	libdbus-glib-1_2
@@ -60,16 +63,15 @@ Requires:	libdri-drivers
 Requires:	libopenal1
 Requires:	libsm6
 Requires:	libice6
-# Add some restricted package to Suggests
-Suggests:	libtxc-dxtn
-ExclusiveArch:	%{ix86}
+Requires:	libxcb-dri2_0
+Requires:	libxcb-glx0
+ExclusiveArch:	%{x86_64}
 
 %description
 Launcher for the Valve's Steam software distribution service.
 
 %prep
-%setup -q -n %{name}
-%apply_patches
+%autosetup -n %{name} -p1
 
 %build
 # Strip out broken outdated crap from the bootstrap environment
@@ -83,11 +85,11 @@ rm -rf	ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s* \
 	ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/lib*
 tar cf ../bootstraplinux_ubuntu12_32.tar *
 cd ..
-xz -9ef bootstraplinux_ubuntu12_32.tar
+xz -f bootstraplinux_ubuntu12_32.tar
 rm -rf TMP
 
 %install
-%makeinstall_std
+%make_install
 
 # Rename steamdeps, it's not working on non-Debian based distros
 mv -f %{buildroot}%{_bindir}/steamdeps %{buildroot}%{_bindir}/steamdeps.save
