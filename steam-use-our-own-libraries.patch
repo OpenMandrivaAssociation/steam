@@ -6,8 +6,8 @@
  export STEAMSCRIPT="$(cd "${0%/*}" && echo "$PWD")/${0##*/}"
 +export PATH="$HOME/.steam/bin32:$PATH"
 +find "$HOME/.steam/root" "$HOME/.local/share/Steam" \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete 2>/dev/null
-+mkdir -p "$HOME/.steam/bin32"
-+ln -sf /usr/bin/gtar "$HOME/.steam/bin32/tar"
++ [ ! -e "$HOME/.steam/bin32" ] && mkdir -p "$HOME/.steam/bin32"
++ [ ! -e "$HOME/.steam/bin32/tar" ] && ln -sf /usr/bin/gtar "$HOME/.steam/bin32/tar"
  
  # When this version is incremented a new package will be deployed to:
  #	http://repo.steampowered.com/steam
