@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.61
-Release:	2
+Release:	3
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -48,6 +48,7 @@ Requires:	libdbus-glib-1_2
 Requires:	libfreetype6
 Requires:	libgconf2_4
 Requires:	libgcrypt20
+Requires:	libgpg-error0
 Requires:	libGLdispatch0
 Requires:	libEGL1
 Requires:	libgl1
@@ -60,8 +61,16 @@ Requires:	libpng16_16
 Requires:	libpulseaudio0
 Requires:	libSDL1.2_0
 Requires:	libstdc++6
+Requires:	libpixman1_0
+Requires:	libogg0
+Requires:	libtheora0
 Requires:	libvorbis0
 Requires:	libxtst6
+Requires:	libxrender1
+Requires:	libxrandr2
+Requires:	libxi6
+Requires:	libxfixes3
+Requires:	libxdmcp6
 Requires:	libdri-drivers
 Requires:	libopenal1
 Requires:	libsm6
@@ -69,7 +78,10 @@ Requires:	libice6
 Requires:	libxcb-dri2_0
 Requires:	libxcb-glx0
 Requires:	libva1
+Requires:	libva-intel-driver
 Requires:	libvdpau1
+Requires:	libvulkan1
+Requires:	vulkan-loader
 ExclusiveArch:	%{x86_64}
 
 %description
@@ -86,7 +98,7 @@ mkdir TMP
 cd TMP
 tar xf ../bootstraplinux_ubuntu12_32.tar.xz
 sed -i -e 's,tar --blocking,gtar --blocking,g' steam.sh
-rm -rf	ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s* \
+rm -rf ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s* \
 	ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/lib*
 tar cf ../bootstraplinux_ubuntu12_32.tar *
 cd ..
