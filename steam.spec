@@ -59,7 +59,7 @@ Requires:	liblcms2_2
 Requires:	libpango1.0_0
 Requires:	libpng16_16
 Requires:	libpulseaudio0
-Requires:	libSDL1.2_0
+Requires:	libSDL2_2.0
 Requires:	libstdc++6
 Requires:	libpixman1_0
 Requires:	libogg0
@@ -77,6 +77,16 @@ Requires:	libsm6
 Requires:	libice6
 Requires:	libxcb-dri2_0
 Requires:	libxcb-glx0
+Requires:	libusb1.0_0
+Requires:	libnm-util2
+Requires:	libpng12_0
+Requires:	libpangox1.0_0
+Requires:	libcrypto1.0.0
+Requires:	libsqlite3_0
+Requires:	libcanberra0
+Requires:	libcanberra-gtk0
+Requires:	libsamplerate0
+Requires:	gdk-pixbuf-query(x86-32)
 Requires:	libva1
 Requires:	libva-intel-driver
 Requires:	libvdpau1
