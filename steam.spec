@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.61
-Release:	9
+Release:	10
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -54,7 +54,6 @@ Requires:	libEGL1
 Requires:	libgl1
 Requires:	libglu1
 Requires:	libgdk_pixbuf2.0_0(x86-32)
-Requires:	gdk-pixbuf2.0(x86-32)
 Requires:	libgtk-x11_2.0_0
 Requires:	liblcms2_2
 Requires:	libpango1.0_0
@@ -91,7 +90,7 @@ Requires:	libva-intel-driver
 Requires:	libvdpau1
 Requires:	libvulkan1
 Requires:	vulkan-loader
-ExclusiveArch:	%{x86_64}
+ExclusiveArch:	%{x86_64} %{ix86}
 
 %description
 Launcher for the Valve's Steam software distribution service.
