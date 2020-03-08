@@ -41,14 +41,19 @@ Requires:	xterm
 Requires:	xz
 Requires:	zenity
 # Libraries
+Requires:	libappindicator2_1
 Requires:	libcurl4 >= 7.63.0
 # https://github.com/ValveSoftware/steam-for-linux/issues/4795
 Requires:	libdbusmenu-gtk2_4
+Requires:	libdbusmenu-glib4
 Requires:	libdbus-glib-1_2
+Requires:	libdbus-1_3
 Requires:	libfreetype6
 Requires:	libgconf2_4
 Requires:	libgcrypt20
 Requires:	libgpg-error0
+Requires:	libfreebl3
+Requires:	libgudev1.0_0
 Requires:	libGLdispatch0
 Requires:	libEGL1
 Requires:	libgl1
@@ -56,6 +61,9 @@ Requires:	libglu1
 Requires:	libgdk_pixbuf2.0_0(x86-32)
 Requires:	libgtk-x11_2.0_0
 Requires:	liblcms2_2
+Requires:	libnspr4
+Requires:	libnss3
+Requires:	libpcre1
 Requires:	libpango1.0_0
 Requires:	libpng16_16
 Requires:	libpulseaudio0
@@ -71,6 +79,7 @@ Requires:	libxrandr2
 Requires:	libxi6
 Requires:	libxfixes3
 Requires:	libxdmcp6
+Requires:	libxscrnsaver1
 Requires:	libdri-drivers
 Requires:	libopenal1
 Requires:	libsm6
