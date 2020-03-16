@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.61
-Release:	10
+Release:	11
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -43,6 +43,7 @@ Requires:	zenity
 # Libraries
 Requires:	libappindicator2_1
 Requires:	libcurl4 >= 7.63.0
+Requires:	libcrypt1
 # https://github.com/ValveSoftware/steam-for-linux/issues/4795
 Requires:	libdbusmenu-gtk2_4
 Requires:	libdbusmenu-glib4
@@ -54,6 +55,7 @@ Requires:	libgcrypt20
 Requires:	libgpg-error0
 Requires:	libfreebl3
 Requires:	libgudev1.0_0
+Requires:	libGLESv2_2
 Requires:	libGLdispatch0
 Requires:	libEGL1
 Requires:	libgl1
@@ -63,6 +65,7 @@ Requires:	libgtk-x11_2.0_0
 Requires:	liblcms2_2
 Requires:	libnspr4
 Requires:	libnss3
+Requires:	libOpenGL0
 Requires:	libpcre1
 Requires:	libpango1.0_0
 Requires:	libpng16_16
