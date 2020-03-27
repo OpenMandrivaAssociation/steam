@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.61
-Release:	2
+Release:	11
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -41,36 +41,68 @@ Requires:	xterm
 Requires:	xz
 Requires:	zenity
 # Libraries
+Requires:	libappindicator2_1
 Requires:	libcurl4 >= 7.63.0
+Requires:	libcrypt1
 # https://github.com/ValveSoftware/steam-for-linux/issues/4795
 Requires:	libdbusmenu-gtk2_4
+Requires:	libdbusmenu-glib4
 Requires:	libdbus-glib-1_2
+Requires:	libdbus-1_3
 Requires:	libfreetype6
 Requires:	libgconf2_4
 Requires:	libgcrypt20
+Requires:	libgpg-error0
+Requires:	libfreebl3
+Requires:	libgudev1.0_0
+Requires:	libGLESv2_2
 Requires:	libGLdispatch0
 Requires:	libEGL1
 Requires:	libgl1
 Requires:	libglu1
-Requires:	libgdk_pixbuf2.0_0
+Requires:	libgdk_pixbuf2.0_0(x86-32)
 Requires:	libgtk-x11_2.0_0
 Requires:	liblcms2_2
+Requires:	libnspr4
+Requires:	libnss3
+Requires:	libOpenGL0
+Requires:	libpcre1
 Requires:	libpango1.0_0
 Requires:	libpng16_16
 Requires:	libpulseaudio0
-Requires:	libSDL1.2_0
+Requires:	libSDL2_2.0_1
 Requires:	libstdc++6
+Requires:	libpixman1_0
+Requires:	libogg0
+Requires:	libtheora0
 Requires:	libvorbis0
 Requires:	libxtst6
+Requires:	libxrender1
+Requires:	libxrandr2
+Requires:	libxi6
+Requires:	libxfixes3
+Requires:	libxdmcp6
+Requires:	libxscrnsaver1
 Requires:	libdri-drivers
 Requires:	libopenal1
 Requires:	libsm6
 Requires:	libice6
 Requires:	libxcb-dri2_0
 Requires:	libxcb-glx0
+Requires:	libusb1.0_0
+Requires:	libpng12_0
+Requires:	libpangox1.0_0
+Requires:	libcrypto1.1
+Requires:	libsqlite3_0
+Requires:	libcanberra0
+Requires:	libcanberra-gtk0
+Requires:	libsamplerate0
 Requires:	libva1
+Requires:	libva-intel-driver
 Requires:	libvdpau1
-ExclusiveArch:	%{x86_64}
+Requires:	libvulkan1
+Requires:	vulkan-loader
+ExclusiveArch:	%{x86_64} %{ix86}
 
 %description
 Launcher for the Valve's Steam software distribution service.
@@ -86,7 +118,7 @@ mkdir TMP
 cd TMP
 tar xf ../bootstraplinux_ubuntu12_32.tar.xz
 sed -i -e 's,tar --blocking,gtar --blocking,g' steam.sh
-rm -rf	ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s* \
+rm -rf ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s* \
 	ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/lib*
 tar cf ../bootstraplinux_ubuntu12_32.tar *
 cd ..
