@@ -1,10 +1,10 @@
-diff -up steam/lib/udev/rules.d/60-steam-input.rules steam/lib/udev/rules.d/new-60-steam-input.rules
---- steam/lib/udev/rules.d/60-steam-input.rules 2019-04-10 18:47:29.000000000 +0200
-+++ steam/lib/udev/rules.d/new-60-steam-input.rules     2019-04-20 00:59:45.318177255 +0200
-@@ -72,3 +72,7 @@ KERNEL=="hidraw*", ATTRS{idVendor}=="095
+diff -up steam-launcher/subprojects/steam-devices/60-steam-input.rules.2~ steam-launcher/subprojects/steam-devices/60-steam-input.rules
+--- steam-launcher/subprojects/steam-devices/60-steam-input.rules.2~	2020-07-10 02:03:42.784991829 +0200
++++ steam-launcher/subprojects/steam-devices/60-steam-input.rules	2020-07-10 02:04:28.618387941 +0200
+@@ -91,3 +91,7 @@ KERNEL=="hidraw*", KERNELS=="*0955:7214*
  
- # NVIDIA Shield Controller (2017 - NVIDIA_Controller_v01.04 over bluetooth hidraw)
- KERNEL=="hidraw*", KERNELS=="*0955:7214*", MODE="0660", TAG+="uaccess"
+ # Astro C40
+ KERNEL=="hidraw*", ATTRS{idVendor}=="9886", ATTRS{idProduct}=="0025", MODE="0660", TAG+="uaccess"
 +
 +# This rule is necessary for gamepad emulation; make sure each user requiring
 +# it is part of the input group.
