@@ -83,6 +83,9 @@ Requires:	libva2
 Requires:	libva-intel-driver
 Requires:	libvdpau1
 Requires:	libvulkan1
+# mesa libs
+Requires:	libGLX_mesa0
+Requires:	libEGL_mesa0
 Requires:	vulkan-loader
 ExclusiveArch:	%{x86_64} %{ix86}
 
