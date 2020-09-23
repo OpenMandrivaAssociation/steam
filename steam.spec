@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.64
-Release:	1
+Release:	2
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -18,6 +18,7 @@ Patch0:		steam-use-our-own-libraries.patch
 # Make Steam Controller usable as a GamePad:
 # https://steamcommunity.com/app/353370/discussions/0/490123197956024380/
 Patch1:		%{name}-controller-gamepad-emulation.patch
+Patch2:		steam-fix-crackling-audio.patch
 
 Requires:	alsa-lib
 Requires:	awk

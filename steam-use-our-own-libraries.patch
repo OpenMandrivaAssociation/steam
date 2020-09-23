@@ -6,7 +6,7 @@ diff -up steam-launcher/bin_steam.sh.1~ steam-launcher/bin_steam.sh
  STEAMSCRIPT="$(cd "${0%/*}" && echo "$PWD")/${0##*/}"
  export STEAMSCRIPT
 +export PATH="$HOME/.steam/bin32:$PATH"
-+find "$HOME/.steam/root" "$HOME/.local/share/Steam" \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete 2>/dev/null
++find "$HOME/.steam/root" "$HOME/.local/share/Steam" \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete 2>/dev/null || :
 +[ ! -e "$HOME/.steam/bin32" ] && mkdir -p "$HOME/.steam/bin32"
 +[ ! -e "$HOME/.steam/bin32/tar" ] && ln -sf /usr/bin/gtar "$HOME/.steam/bin32/tar"
  bootstrapscript="$(readlink -f "$STEAMSCRIPT")"
@@ -17,6 +17,6 @@ diff -up steam-launcher/bin_steam.sh.1~ steam-launcher/bin_steam.sh
  cd "$LAUNCHSTEAMDIR"
  
 +# (tpg) use our own libraries
-+find "$HOME/.steam/root" "$HOME/.local/share/Steam" \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete
++find "$HOME/.steam/root" "$HOME/.local/share/Steam" \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete 2>/dev/null || :
 +
  exec "$LAUNCHSTEAMDIR/$STEAMBOOTSTRAP" "$@"
