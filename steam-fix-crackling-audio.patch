@@ -4,7 +4,7 @@ diff -uraN steam-launcher/bin_steam.sh omv-steam-launcher/bin_steam.sh
 @@ -15,6 +15,10 @@
  bootstrapdir="$(dirname "$bootstrapscript")"
  
- export STEAMSCRIPT_VERSION=1.0.0.68
+ export STEAMSCRIPT_VERSION=1.0.0.69
 +# Make various games running in wine/proton happy
 +if [ -z "$STEAM_DONT_MESS_WITH_PULSE" ]; then
 +       export PULSE_LATENCY_MSEC=60
