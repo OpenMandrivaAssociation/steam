@@ -130,6 +130,7 @@ install -m 644 -p subprojects/steam-devices/*.rules \
 %{_prefix}/lib/steam/bootstraplinux_ubuntu12_32.tar.xz
 %{_datadir}/applications/steam.desktop
 %{_datadir}/pixmaps/steam*.png
+%{_datadir}/metainfo/com.valvesoftware.Steam.metainfo.xml
 %{_iconsdir}/hicolor/*/apps/steam.*
 %{_mandir}/man6/steam.6.*
 %{_udevrulesdir}/*.rules
