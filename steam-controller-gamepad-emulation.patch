@@ -1,10 +1,10 @@
-diff -up steam-launcher/subprojects/steam-devices/60-steam-input.rules.2~ steam-launcher/subprojects/steam-devices/60-steam-input.rules
---- steam-launcher/subprojects/steam-devices/60-steam-input.rules.2~	2020-07-10 02:03:42.784991829 +0200
-+++ steam-launcher/subprojects/steam-devices/60-steam-input.rules	2020-07-10 02:04:28.618387941 +0200
-@@ -91,3 +91,7 @@ KERNEL=="hidraw*", KERNELS=="*0955:7214*
+diff -uraN steam-launcher/subprojects/steam-devices/60-steam-input.rules omv-steam-launcher/subprojects/steam-devices/60-steam-input.rules
+--- steam-launcher/subprojects/steam-devices/60-steam-input.rules	2021-09-08 20:10:10.000000000 +0200
++++ omv-steam-launcher/subprojects/steam-devices/60-steam-input.rules	2021-10-03 16:13:43.604337896 +0200
+@@ -125,3 +125,7 @@
  
- # Astro C40
- KERNEL=="hidraw*", ATTRS{idVendor}=="9886", ATTRS{idProduct}=="0025", MODE="0660", TAG+="uaccess"
+ # Thrustmaster eSwap Pro
+ KERNEL=="hidraw*", ATTRS{idVendor}=="044f", ATTRS{idProduct}=="d00e", MODE="0660", TAG+="uaccess"
 +
 +# This rule is necessary for gamepad emulation; make sure each user requiring
 +# it is part of the input group.
