@@ -128,6 +128,8 @@ install -m 644 -p subprojects/steam-devices/*.rules \
 %{_prefix}/lib/steam/bin_steam.sh
 %{_prefix}/lib/steam/steam.desktop
 %{_prefix}/lib/steam/bootstraplinux_ubuntu12_32.tar.xz
+%{_prefix}/steam/steam_launcher/__init__.py
+%{_prefix}/steam/steam_launcher/launcherutils.py
 %{_datadir}/applications/steam.desktop
 %{_datadir}/pixmaps/steam*.png
 %{_datadir}/metainfo/com.valvesoftware.Steam.metainfo.xml
