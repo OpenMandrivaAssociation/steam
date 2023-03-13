@@ -2,7 +2,7 @@
 
 Summary:	Steam Linux Client
 Name:		steam
-Version:	1.0.0.75
+Version:	1.0.0.76
 Release:	1
 Group:		Games/Other
 License:	Proprietary
@@ -84,6 +84,10 @@ Requires:	libva2
 Requires:	libva-intel-driver
 Requires:	libvdpau1
 Requires:	libvulkan1
+
+# Needed for sound on 32-bit games if use pipewire
+Recommends: libpipewire0.3_0
+Recommends: alsa-plugins-32bit
 # mesa libs
 Requires:	libGLX_mesa0
 Requires:	libEGL_mesa0
