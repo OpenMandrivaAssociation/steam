@@ -2,13 +2,8 @@
 
 Summary:	Steam Linux Client
 Name:		steam
-<<<<<<< HEAD
-Version:	1.0.0.75
-Release:	2
-=======
 Version:	1.0.0.76
-Release:	1
->>>>>>> 6149d7a (1.0.0.76, fix for lack sound with pipewire on 32-bit games)
+Release:	3
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
