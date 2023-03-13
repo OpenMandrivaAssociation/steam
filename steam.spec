@@ -2,8 +2,13 @@
 
 Summary:	Steam Linux Client
 Name:		steam
+<<<<<<< HEAD
 Version:	1.0.0.75
 Release:	2
+=======
+Version:	1.0.0.76
+Release:	1
+>>>>>>> 6149d7a (1.0.0.76, fix for lack sound with pipewire on 32-bit games)
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -84,6 +89,10 @@ Requires:	libva2
 Requires:	libva-intel-driver
 Requires:	libvdpau1
 Requires:	libvulkan1
+
+# Needed for sound on 32-bit games if use pipewire
+Recommends: libpipewire0.3_0
+Recommends: alsa-plugins-32bit
 # mesa libs
 Requires:	libGLX_mesa0
 Requires:	libEGL_mesa0
