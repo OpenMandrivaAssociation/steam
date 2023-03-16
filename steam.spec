@@ -33,7 +33,7 @@ Requires:	desktop-file-utils
 Requires:	fonts-ttf-liberation
 Requires:	gdk-pixbuf2.0
 Requires:	gtk+2.0
-Requires:	gnutar
+Requires:	gnutar >= 1.34-3
 Requires:	hicolor-icon-theme
 Requires:	nss
 Requires:	openal
