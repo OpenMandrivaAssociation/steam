@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.76
-Release:	1
+Release:	2
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -33,7 +33,7 @@ Requires:	desktop-file-utils
 Requires:	fonts-ttf-liberation
 Requires:	gdk-pixbuf2.0
 Requires:	gtk+2.0
-Requires:	gnutar
+Requires:	gnutar >= 1.34-3
 Requires:	hicolor-icon-theme
 Requires:	nss
 Requires:	openal

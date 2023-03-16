@@ -1,22 +1,34 @@
 diff -up steam-launcher/bin_steam.sh.1~ steam-launcher/bin_steam.sh
---- steam-launcher/bin_steam.sh.1~	2020-07-10 02:00:39.964414986 +0200
-+++ steam-launcher/bin_steam.sh	2020-07-10 02:02:16.401246105 +0200
-@@ -11,6 +11,10 @@ set -e
+--- steam-launcher/bin_steam.sh.1~	2023-03-01 19:59:10.000000000 +0100
++++ steam-launcher/bin_steam.sh	2023-03-16 01:26:20.826301585 +0100
+@@ -11,6 +11,8 @@ set -e
  # Get the full name of this script
  STEAMSCRIPT="$(cd "${0%/*}" && echo "$PWD")/${0##*/}"
  export STEAMSCRIPT
-+export PATH="$HOME/.steam/bin32:$PATH"
++export PATH="/usr/libexec/gnutar:$PATH"
 +find "$HOME/.steam/root" "$HOME/.local/share/Steam" \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete 2>/dev/null || :
-+[ ! -e "$HOME/.steam/bin32" ] && mkdir -p "$HOME/.steam/bin32"
-+[ ! -e "$HOME/.steam/bin32/tar" ] && ln -sf /usr/bin/gtar "$HOME/.steam/bin32/tar"
  bootstrapscript="$(readlink -f "$STEAMSCRIPT")"
  bootstrapdir="$(dirname "$bootstrapscript")"
  
-@@ -209,4 +213,7 @@ fi
+@@ -213,4 +215,9 @@ fi
  cp "$LAUNCHSTEAMBOOTSTRAPFILE" "$LAUNCHSTEAMDIR/bootstrap.tar.xz"
  cd "$LAUNCHSTEAMDIR"
  
 +# (tpg) use our own libraries
 +find "$HOME/.steam/root" "$HOME/.local/share/Steam" \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" -o -name "libgpg-error.so*" \) -print -delete 2>/dev/null || :
++# $STEAMBOOTSTRAP hardcodes some gnutar specific behavior
++grep -q gnutar "$LAUNCHSTEAMDIR/$STEAMBOOTSTRAP" || sed -i -e "/set -u/aexport PATH=/usr/libexec/gnutar:\$PATH" "$LAUNCHSTEAMDIR/$STEAMBOOTSTRAP"
 +
  exec "$LAUNCHSTEAMDIR/$STEAMBOOTSTRAP" "$@"
+diff -up steam-launcher/steam.desktop.1~ steam-launcher/steam.desktop
+--- steam-launcher/steam.desktop.1~	2023-03-01 19:55:55.000000000 +0100
++++ steam-launcher/steam.desktop	2023-03-16 01:24:39.289347775 +0100
+@@ -27,7 +27,7 @@ Comment[th]=โปรแกรมสำ�
+ Comment[tr]=Steam üzerinden oyun oynama ve düzenleme uygulaması
+ Comment[uk]=Програма для керування іграми та запуску ігор у Steam
+ Comment[vi]=Ứng dụng để quản lý và chơi trò chơi trên Steam
+-Exec=/usr/bin/steam %U
++Exec=sh -c "export PATH=/usr/libexec/gnutar:$PATH ; /usr/bin/steam %U"
+ Icon=steam
+ Terminal=false
+ Type=Application
