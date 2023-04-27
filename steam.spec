@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.76
-Release:	4
+Release:	5
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -65,6 +65,7 @@ Requires:	libpulseaudio0
 Requires:	libSDL2_2.0_1
 Requires:	libstdc++6
 Requires:	libpixman1_0
+Requires:	libudev1
 Requires:	libogg0
 Requires:	libvorbis0
 Requires:	libxtst6
