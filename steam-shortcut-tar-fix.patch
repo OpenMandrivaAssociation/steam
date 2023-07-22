@@ -1,0 +1,12 @@
+diff -up steam-launcher/steam.desktop.1~ steam-launcher/steam.desktop
+--- steam-launcher/steam.desktop.1~	2023-03-01 19:55:55.000000000 +0100
++++ steam-launcher/steam.desktop	2023-03-16 01:24:39.289347775 +0100
+@@ -27,7 +27,7 @@ Comment[th]=โปรแกรมสำ�
+ Comment[tr]=Steam üzerinden oyun oynama ve düzenleme uygulaması
+ Comment[uk]=Програма для керування іграми та запуску ігор у Steam
+ Comment[vi]=Ứng dụng để quản lý và chơi trò chơi trên Steam
+-Exec=/usr/bin/steam %U
++Exec=sh -c "export PATH=/usr/libexec/gnutar:$PATH ; steam %U"
+ Icon=steam
+ Terminal=false
+ Type=Application

@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.78
-Release:	1
+Release:	2
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -14,7 +14,7 @@ Source8:	https://raw.githubusercontent.com/denilsonsa/udev-joystick-blacklist/ma
 # First generation Nvidia Shield controller seen as mouse:
 Source9:	https://raw.githubusercontent.com/cyndis/shield-controller-config/master/99-shield-controller.rules
 
-Patch0:		steam-use-our-own-libraries.patch
+Patch0:		steam-shortcut-tar-fix.patch
 # Make Steam Controller usable as a GamePad:
 # https://steamcommunity.com/app/353370/discussions/0/490123197956024380/
 Patch1:		%{name}-controller-gamepad-emulation.patch
@@ -104,19 +104,6 @@ Launcher for the Valve's Steam software distribution service.
 %autosetup -n %{name}-launcher -p1
 
 %build
-# Strip out broken outdated crap from the bootstrap environment
-# and make the launcher script use gtar (--checkpoint=1 is a gtar
-# specific option)
-mkdir TMP
-cd TMP
-tar xf ../bootstraplinux_ubuntu12_32.tar.xz
-sed -i -e 's,tar --blocking,gtar --blocking,g' steam.sh
-rm -rf ubuntu12_32/steam-runtime/i386/lib/i386-linux-gnu/libgcc_s* \
-	ubuntu12_32/steam-runtime/i386/usr/lib/i386-linux-gnu/lib*
-tar cf ../bootstraplinux_ubuntu12_32.tar *
-cd ..
-xz -f bootstraplinux_ubuntu12_32.tar
-rm -rf TMP
 
 %install
 %make_install
