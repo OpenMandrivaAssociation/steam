@@ -2,8 +2,8 @@
 
 Summary:	Steam Linux Client
 Name:		steam
-Version:	1.0.0.76
-Release:	5
+Version:	1.0.0.78
+Release:	1
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
