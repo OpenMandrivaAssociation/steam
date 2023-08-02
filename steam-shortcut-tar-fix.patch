@@ -10,3 +10,16 @@ diff -up steam-launcher/steam.desktop.1~ steam-launcher/steam.desktop
  Icon=steam
  Terminal=false
  Type=Application
+diff -up steam-launcher/bin_steam.sh.omv~ steam-launcher/bin_steam.sh
+--- steam-launcher/bin_steam.sh.omv~	2023-08-02 16:51:20.770504722 +0200
++++ steam-launcher/bin_steam.sh	2023-08-02 16:51:47.394729683 +0200
+@@ -8,6 +8,9 @@
+ 
+ set -e
+ 
++# Steam binaries hardcode gnutar specific options to tar calls
++export PATH=/usr/libexec/gnutar:$PATH
++
+ # Get the full name of this script
+ STEAMSCRIPT="$(cd "${0%/*}" && echo "$PWD")/${0##*/}"
+ export STEAMSCRIPT
