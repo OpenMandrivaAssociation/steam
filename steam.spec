@@ -2,8 +2,8 @@
 
 Summary:	Steam Linux Client
 Name:		steam
-Version:	1.0.0.78
-Release:	2
+Version:	1.0.0.79
+Release:	1
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -87,6 +87,9 @@ Requires:	libva2
 Requires:	libva-intel-driver
 Requires:	libvdpau1
 Requires:	libvulkan1
+
+# Needed for some Paradox Native Linux games as Crusader Kings III
+Requires:    %{_lib}ncurses6
 
 # Needed for sound on 32-bit games if use pipewire
 Recommends: libpipewire0.3_0
