@@ -88,6 +88,9 @@ Requires:	libva-intel-driver
 Requires:	libvdpau1
 Requires:	libvulkan1
 
+# Needed for some Paradox Native Linux games as Crusader Kings III
+Requires:    %{_lib}ncurses6
+
 # Needed for sound on 32-bit games if use pipewire
 Recommends: libpipewire0.3_0
 Recommends: alsa-plugins-32bit
