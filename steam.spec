@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.79
-Release:	1
+Release:	2
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -40,7 +40,7 @@ Requires:	openal
 Requires:	pulseaudio
 Requires:	xterm
 Requires:	xz
-Requires:	zenity
+Requires:	zenity-gtk
 # Libraries
 Requires:	libcurl4 >= 7.63.0
 Requires:	libcrypt1
