@@ -2,7 +2,7 @@
 
 Summary:	Steam Linux Client
 Name:		steam
-Version:	1.0.0.79
+Version:	1.0.0.81
 Release:	1
 Group:		Games/Other
 License:	Proprietary
@@ -40,7 +40,7 @@ Requires:	openal
 Requires:	pulseaudio
 Requires:	xterm
 Requires:	xz
-Requires:	zenity
+Requires:	(zenity-gtk or qarma)
 # Libraries
 Requires:	libcurl4 >= 7.63.0
 Requires:	libcrypt1

@@ -1,10 +1,10 @@
 diff -uraN steam-launcher/subprojects/steam-devices/60-steam-input.rules omv-steam-launcher/subprojects/steam-devices/60-steam-input.rules
---- steam-launcher/subprojects/steam-devices/60-steam-input.rules	2021-09-08 20:10:10.000000000 +0200
-+++ omv-steam-launcher/subprojects/steam-devices/60-steam-input.rules	2021-10-03 16:13:43.604337896 +0200
-@@ -125,3 +125,7 @@
+--- steam-launcher/subprojects/steam-devices/60-steam-input.rules	2024-08-15 19:36:26.000000000 +0200
++++ omv-steam-launcher/subprojects/steam-devices/60-steam-input.rules	2024-08-30 18:23:37.914517798 +0200
+@@ -140,3 +140,7 @@
  
- # Thrustmaster eSwap Pro
- KERNEL=="hidraw*", ATTRS{idVendor}=="044f", ATTRS{idProduct}=="d00e", MODE="0660", TAG+="uaccess"
+ # Performance Designed Products Victrix Pro FS-12 for PS4 & PS5
+ KERNEL=="hidraw*", ATTRS{idVendor}=="0e6f", ATTRS{idProduct}=="020c", MODE="0660", TAG+="uaccess"
 +
 +# This rule is necessary for gamepad emulation; make sure each user requiring
 +# it is part of the input group.
