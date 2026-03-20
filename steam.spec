@@ -20,6 +20,8 @@ Patch0:		steam-shortcut-tar-fix.patch
 Patch1:		%{name}-controller-gamepad-emulation.patch
 Patch2:		steam-fix-crackling-audio.patch
 
+BuildRequires: make
+
 Requires:	alsa-lib
 Requires:	awk
 Requires:	coreutils
