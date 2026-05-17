@@ -3,7 +3,7 @@
 Summary:	Steam Linux Client
 Name:		steam
 Version:	1.0.0.85
-Release:	1
+Release:	2
 Group:		Games/Other
 License:	Proprietary
 URL:		https://github.com/ValveSoftware/steam-for-linux
@@ -14,12 +14,9 @@ Source0:	http://repo.steampowered.com/steam/pool/steam/s/steam/%{name}_%{version
 # First generation Nvidia Shield controller seen as mouse:
 # Source9:	https://raw.githubusercontent.com/cyndis/shield-controller-config/master/99-shield-controller.rules
 
-# valve steam devices (MIT Licensed) - need to update from their repo
+# valve steam devices (MIT Licensed) - replaced with package steam-devices
 # all other gamepad and joystick rules should be their own packages as 
 # steam may not be the only program to use them
-%define steam_dev_commit 39e7bd00f7a322e5165fd8f416b31d23daf6d385
-Source8:    https://github.com/ValveSoftware/steam-devices/tree/%steam_dev_commit/60-%name-input.rules
-Source9:    https://github.com/ValveSoftware/steam-devices/tree/%steam_dev_commit/60-%name-vr.rules
 
 Patch0:		steam-shortcut-tar-fix.patch
 # Make Steam Controller usable as a GamePad:
@@ -97,6 +94,8 @@ Requires:	libva-intel-driver
 Requires:	libvdpau1
 Requires:	libvulkan1
 
+Requires:  steam-devices
+
 # Needed for some Paradox Native Linux games as Crusader Kings III
 Requires:    %{_lib}ncurses6
 
@@ -123,14 +122,6 @@ Launcher for the Valve's Steam software distribution service.
 # Remove steamdeps, it's not working on non-Debian based distros
 rm -f %{buildroot}%{_bindir}/steamdeps %{buildroot}%{_prefix}/lib/steam/bin_steamdeps.py
 
-mkdir -p %{buildroot}%{_udevrulesdir}
-
-# remove older udev rules
-rm -f subprojects/steam-devices/*.rules
-
-install -m 644 -p  \
-    %{SOURCE8} %{SOURCE9} %{buildroot}%{_udevrulesdir}/
-
 %files
 %doc %{_docdir}/*
 %{_bindir}/steam*
@@ -145,4 +136,3 @@ install -m 644 -p  \
 %{_datadir}/metainfo/com.valvesoftware.Steam.metainfo.xml
 %{_iconsdir}/hicolor/*/apps/steam.*
 %{_mandir}/man6/steam.6.*
-%{_udevrulesdir}/*.rules
